@@ -1,0 +1,5 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Jiri categories table extension'
+    - jk_shop_categories_extension.php

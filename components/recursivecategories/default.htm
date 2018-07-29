@@ -1,0 +1,21 @@
+<ul>
+{%for category in __SELF__.categoriesTreeByDepth%}
+    <li>{{category.title}} {{category.description}}</li>
+    {%set subCategories = category.childrenInList%}
+    {%if subCategories | length > 0%}
+    <ul>
+        {%for subCategory in subCategories%}
+        <li>{{subCategory.title}} - {{subCategory.description}}</li>
+        {%set subSubCategories = subCategory.childrenInList%}
+        {%if subSubCategories | length > 0%}
+        <ul>
+            {%for subSubCategory in subSubCategories%}
+            <li>{{subSubCategory.title}}</li>
+            {%endfor%}
+        </ul>
+        {%endif%}
+        {%endfor%}
+    </ul>
+    {%endif%}
+{%endfor%}
+</ul>

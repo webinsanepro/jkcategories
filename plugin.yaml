@@ -1,0 +1,6 @@
+plugin:
+    name: 'webinsane.jkcategories::lang.plugin.name'
+    description: 'webinsane.jkcategories::lang.plugin.description'
+    author: Webinsane
+    icon: oc-icon-table
+    homepage: ''

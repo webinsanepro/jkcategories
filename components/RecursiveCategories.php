@@ -20,7 +20,7 @@ class RecursiveCategories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Categories',
+            'name'        => 'Categories levels',
             'description' => 'Recursive list of categories presentation'
         ];
     }

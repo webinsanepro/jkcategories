@@ -1,24 +1,23 @@
-<ul>
 {%for categoryTreeByDepth in __SELF__.categoriesTreeByDepth%}
     {%for depth, categoryTree in categoryTreeByDepth%}
         {%for category in categoryTree%}
-            <li>
-            {%for i in 0..depth%}&nbsp;{%endfor%}
-                Title: {{category.title}}
+            <div>
+            {%for i in 0..depth%}&nbsp;{%endfor%}<span>{{category.title}}</span>
                 <br/>
-                    Slug: {{__SELF__.categoryPage | page({category:category.slug}) }}
+                <span>
+                    <a href="{{__SELF__.categoryPage | page({category:category.slug}) }}">Ссылка на категорию</a>
                 {{category.slug}}
+                </span>
                 <br/>
-                Description: {{category.description|raw}}<br>
-                Image:
+                <p>{{category.description|raw}}</p>
                 {%if category.thumbnails | length > 0%}
                 {%set thumbnail=category.thumbnails.0%}
-                <img src="{{thumbnail.path}}" style="max-width: 100px;">
+                <img src="{{thumbnail.path}}">
+
                 {%endif%}
-            </li>
+            </div>
             <br/>
             <br/>
         {%endfor%}
     {%endfor%}
 {%endfor%}
-</ul>

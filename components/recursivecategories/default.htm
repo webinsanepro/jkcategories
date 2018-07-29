@@ -1,16 +1,43 @@
 <ul>
 {%for category in __SELF__.categoriesTreeByDepth%}
-    <li>{{category.title}} {{category.description}}</li>
+    <li>Title:{{category.title}}<br>
+        Descriprion: {{category.description | raw}}<br>
+        Image:
+        {%if category.thumbnails | length > 0%}
+                {%set thumbnail=category.thumbnails.0%}
+                <img src="{{thumbnail.path}}" style="max-width: 100px;">
+
+                {%endif%}
+       <br>
+        Slug: {{category.slug}}</li>
     {%set subCategories = category.childrenInList%}
     {%if subCategories | length > 0%}
     <ul>
         {%for subCategory in subCategories%}
-        <li>{{subCategory.title}} - {{subCategory.description}}</li>
+        <li>Title:{{subCategory.title}}<br>
+            Descriprion: {{subCategory.description | raw}}<br>
+            Image:
+            {%if subCategory.thumbnails | length > 0%}
+                {%set thumbnail=subCategory.thumbnails.0%}
+                <img src="{{thumbnail.path}}" style="max-width: 100px;">
+
+                {%endif%}
+            <br>
+            Slug: {{subCategory.slug}}</li>
         {%set subSubCategories = subCategory.childrenInList%}
         {%if subSubCategories | length > 0%}
         <ul>
             {%for subSubCategory in subSubCategories%}
-            <li>{{subSubCategory.title}}</li>
+            <li>Title:{{subSubCategory.title}}<br>
+            Descriprion: {{subSubCategory.description | raw}}<br>
+            Image:
+                {%if subSubCategory.thumbnails | length > 0%}
+                {%set thumbnail=subSubCategory.thumbnails.0%}
+                <img src="{{thumbnail.path}}" style="max-width: 100px;">
+
+                {%endif%}
+                <br>
+            Slug: {{subSubCategory.slug}}</li>
             {%endfor%}
         </ul>
         {%endif%}

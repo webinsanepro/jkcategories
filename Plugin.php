@@ -38,7 +38,7 @@ class Plugin extends PluginBase
             $widget->addTabFields([
                 'webinsane_jkcategories_show_in_list' => [
                     'tab'     => 'jiri.jkshop::lang.categories.detail',
-                    'label'   => 'Show category and its children',
+                    'label'   => 'webinsane.jkcategories::lang.categories.switch',
                     'type'    => 'switch'
                 ]
             ]);

@@ -19,8 +19,8 @@ class Categories extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Categories',
-            'description' => 'Nested tree presentation'
+            'name'        => 'webinsane.jkcategories::lang.component.c1name',
+            'description' => 'webinsane.jkcategories::lang.component.c1desc'
         ];
     }
 
@@ -28,11 +28,11 @@ class Categories extends ComponentBase
     {
         return [
             'categoryPage' => [
-                'title'       => 'Category page',
-                'description' => 'Category page link',
+                'title'       => 'webinsane.jkcategories::lang.component.title',
+                'description' => 'webinsane.jkcategories::lang.component.tetledesc',
                 'type'        => 'dropdown',
                 'default'     => 'category',
-                'group'       => 'Links',
+                'group'       => 'webinsane.jkcategories::lang.component.grouplink',
             ],
         ];
     }

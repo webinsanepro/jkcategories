@@ -36,7 +36,7 @@ class Plugin extends PluginBase
                 return;
             }
             $widget->addTabFields([
-                'show_in_list' => [
+                'webinsane_jkcategories_show_in_list' => [
                     'tab'     => 'jiri.jkshop::lang.categories.detail',
                     'label'   => 'Show category and its children',
                     'type'    => 'switch'
@@ -49,7 +49,7 @@ class Plugin extends PluginBase
                 return;
 
             $list->addColumns([
-                'show_in_list' => [
+                'webinsane_jkcategories_show_in_list' => [
                     'label'   => 'Show category and its children',
                     'type'    => 'switch'
                 ]
@@ -60,7 +60,7 @@ class Plugin extends PluginBase
         Category::extend(function($model) {
             $model->addDynamicMethod('childrenInList', function() use ($model) {
                 return $model->children->filter(function($subCategory){
-                    return $subCategory->active == 1 && $subCategory->show_in_list;
+                    return $subCategory->active == 1 && $subCategory->webinsane_jkcategories_show_in_list;
                 });
             });
         });

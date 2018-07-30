@@ -45,7 +45,7 @@ class RecursiveCategories extends ComponentBase
     {
         $this->categoriesTreeByDepth = Category::where('nest_depth', 0)
             ->where('active', 1)
-            ->where('show_in_list', 1)
+            ->where('webinsane_jkcategories_show_in_list', 1)
             ->get();
 
     }

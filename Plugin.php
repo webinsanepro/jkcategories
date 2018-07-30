@@ -7,6 +7,16 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+    public function pluginDetails()
+    {
+        return [
+            'name'        => 'webinsane.jkcategories::lang.plugin.name',
+            'description' => 'webinsane.jkcategories::lang.plugin.description',
+            'author'      => 'Webinsane',
+            'icon'        => 'oc-icon-table'
+        ];
+    }
+
     public function registerComponents()
     {
         return [

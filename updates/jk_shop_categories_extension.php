@@ -8,14 +8,14 @@ class JkShopCategoriesExtension extends Migration
     public function up()
     {
         Schema::table('jiri_jkshop_categories', function ($table) {
-            $table->boolean("show_in_list")->nullable();
+            $table->boolean("webinsane_jkcategories_show_in_list")->nullable();
         });
     }
 
     public function down()
     {
-        Schema::table('jiri_jkshop_orders', function ($table) {
-            $table->dropColumn('show_in_list');
+        Schema::table('jiri_jkshop_categories', function ($table) {
+            $table->dropColumn('webinsane_jkcategories_show_in_list');
         });
     }
 }

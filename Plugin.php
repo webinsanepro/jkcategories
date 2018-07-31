@@ -7,6 +7,11 @@ use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
+    /**
+     * @var array Plugin dependencies
+     */
+    public $require = ['jiri.jkshop'];
+
     public function pluginDetails()
     {
         return [
